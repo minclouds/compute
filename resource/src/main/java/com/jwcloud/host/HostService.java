@@ -94,7 +94,6 @@ public class HostService implements BaseService<HostEntity, HostDto> {
      */
     public String allocate(HostAllocateDto dto) {
 
-
         return null;
     }
 }

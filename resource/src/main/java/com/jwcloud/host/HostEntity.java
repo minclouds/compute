@@ -3,8 +3,8 @@ package com.jwcloud.host;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jwcloud.base.BaseEntity;
-import com.jwcloud.host.disk.HostDiskEntity;
-import com.jwcloud.host.gpu.HostGpuEntity;
+import com.jwcloud.host.device.disk.HostDiskEntity;
+import com.jwcloud.host.device.gpu.HostGpuEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

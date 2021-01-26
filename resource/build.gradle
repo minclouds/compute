@@ -1,6 +1,7 @@
 buildscript {
     ext {
         spring_boot_version = '2.2.7.RELEASE'
+        feignVersion = '10.7.0'
     }
     repositories {
         mavenCentral()
@@ -27,4 +28,6 @@ repositories {
 
 dependencies {
     compile project(":core")
+    compile "io.github.openfeign:feign-core:$feignVersion"
+    compile "io.github.openfeign:feign-gson:$feignVersion"
 }

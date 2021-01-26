@@ -1,4 +1,4 @@
-package com.jwcloud.host.gpu;
+package com.jwcloud.host.device.gpu;
 
 import com.jwcloud.base.BaseEntity;
 import lombok.Data;

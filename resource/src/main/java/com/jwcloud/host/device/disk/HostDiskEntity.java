@@ -1,4 +1,4 @@
-package com.jwcloud.host.disk;
+package com.jwcloud.host.device.disk;
 
 import com.jwcloud.base.BaseEntity;
 import lombok.Data;
