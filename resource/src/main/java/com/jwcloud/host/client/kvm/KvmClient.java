@@ -2,13 +2,9 @@ package com.jwcloud.host.client.kvm;
 
 import com.jwcloud.host.client.constant.PowerAction;
 import com.jwcloud.rest.RestResult;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
-@Primary
-@Service("kvm")
+@Service
 public class KvmClient {
     
     public RestResult<KvmInfo> create(String requestId, KvmData kvmData) {

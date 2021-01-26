@@ -1,15 +1,11 @@
 package com.jwcloud.goup;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jwcloud.base.BaseEntity;
 import com.jwcloud.base.BaseState;
-import com.jwcloud.host.HostEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 /**
  * 集群信息

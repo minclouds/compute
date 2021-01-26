@@ -2,9 +2,7 @@ package com.jwcloud.host;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.jwcloud.base.BaseService;
-import com.jwcloud.flavor.FlavorEntity;
 import com.jwcloud.flavor.FlavorService;
-import com.jwcloud.pod.PodEntity;
 import com.jwcloud.pod.PodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

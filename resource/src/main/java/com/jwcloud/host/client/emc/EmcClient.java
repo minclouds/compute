@@ -2,11 +2,9 @@ package com.jwcloud.host.client.emc;
 
 import com.jwcloud.host.client.constant.PowerAction;
 import com.jwcloud.rest.RestResult;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Primary
-@Service("kvm")
+@Service
 public class EmcClient {
 
     public RestResult<EmcInfo> create(String requestId, EmcData emcData) {
