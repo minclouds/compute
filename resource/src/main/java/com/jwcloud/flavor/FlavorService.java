@@ -3,7 +3,6 @@ package com.jwcloud.flavor;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.jwcloud.base.BaseService;
 import com.jwcloud.base.BaseState;
-import com.jwcloud.pod.PodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +11,12 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class FlavorService implements BaseService<FlavorEntity, EcsFlavorDto> {
+public class FlavorService implements BaseService<FlavorEntity, FlavorDto> {
     @Autowired
     private FlavorMapper mapper;
 
     @Override
-    public FlavorEntity insert(EcsFlavorDto dto) {
+    public FlavorEntity insert(FlavorDto dto) {
         FlavorEntity entity = new FlavorEntity(dto);
         entity.setCreatedAt(new Date());
         entity.setUpdatedAt(new Date());
@@ -36,7 +35,7 @@ public class FlavorService implements BaseService<FlavorEntity, EcsFlavorDto> {
     }
 
     @Override
-    public FlavorEntity update(String id, EcsFlavorDto dto) {
+    public FlavorEntity update(String id, FlavorDto dto) {
         FlavorEntity flavor = getById(id);
         FlavorEntity entity = new FlavorEntity(dto);
         entity.setId(flavor.getId());

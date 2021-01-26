@@ -3,9 +3,7 @@ package com.jwcloud.cluster;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.jwcloud.base.BaseService;
 import com.jwcloud.base.BaseState;
-import com.jwcloud.flavor.FlavorEntity;
 import com.jwcloud.pod.PodService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

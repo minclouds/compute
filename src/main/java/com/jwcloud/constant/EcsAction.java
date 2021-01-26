@@ -1,8 +1,5 @@
 package com.jwcloud.constant;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 /**
  * 弹性云服务器操作
  *

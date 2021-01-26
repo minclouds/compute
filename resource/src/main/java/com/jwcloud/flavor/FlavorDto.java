@@ -4,7 +4,6 @@ import com.jwcloud.base.BaseDto;
 import com.jwcloud.base.BaseState;
 import com.jwcloud.flavor.qos.EbsQos;
 import com.jwcloud.flavor.qos.EcsQos;
-import com.jwcloud.pod.PodTag;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

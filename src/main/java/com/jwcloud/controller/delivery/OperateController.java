@@ -3,9 +3,11 @@ package com.jwcloud.controller.delivery;
 import com.jwcloud.constant.BmsAction;
 import com.jwcloud.constant.EbsAction;
 import com.jwcloud.constant.EcsAction;
-import com.jwcloud.constant.InstanceType;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1.0")
