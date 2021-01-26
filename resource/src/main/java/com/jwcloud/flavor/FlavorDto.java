@@ -13,15 +13,15 @@ import lombok.EqualsAndHashCode;
 @ApiModel("实例规格")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class EbsFlavorDto extends BaseDto {
+public class FlavorDto extends BaseDto {
     @ApiModelProperty(value = "唯一标识", example = "ecs.g1.large.4")
     private String uuid;
     @ApiModelProperty(value = "名称", example = "一代通用规格")
     private String name;
+    @ApiModelProperty(value = "主机限速")
+    private EcsQos ecsQos;
     @ApiModelProperty(value = "磁盘限速")
-    private EbsQos qos;
-    @ApiModelProperty(value = "标签", example = "EcsG1Com")
-    private PodTag podTag;
+    private EbsQos ebsQos;
     @ApiModelProperty(value = "状态", example = "available")
     private BaseState state;
 }

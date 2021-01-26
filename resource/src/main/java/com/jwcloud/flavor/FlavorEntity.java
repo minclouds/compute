@@ -15,22 +15,21 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @TableName(value = "tbl_flavor", autoResultMap = true)
-public class FlavorEntity<T> extends BaseEntity implements Serializable {
+public class FlavorEntity extends BaseEntity implements Serializable {
     /* 规格唯一标识 */
     private String flavorUuid;
     /* 规格名称 */
     private String flavorName;
     /* 服务器所使用的硬件信息 */
     @TableField(typeHandler = JacksonTypeHandler.class)
-    protected T qos;
+    private Object qos;
     /** 规格状态 */
     private BaseState state;
 
-    @SuppressWarnings("unchecked")
-    public FlavorEntity(EcsFlavorDto dto) {
+    public FlavorEntity(FlavorDto dto) {
         this.flavorUuid = dto.getUuid();
         this.flavorName = dto.getName();
-        this.qos = (T) dto.getQos();
+        this.qos = dto.getEcsQos() != null ? dto.getEcsQos() : dto.getEbsQos();
         this.state = dto.getState();
     }
 }
