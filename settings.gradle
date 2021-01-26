@@ -1,0 +1,5 @@
+rootProject.name = 'compute'
+include 'core'
+include 'resource'
+include 'instance'
+
