@@ -20,9 +20,11 @@ public class FlavorEntity extends BaseEntity implements Serializable {
     private String flavorUuid;
     /* 规格名称 */
     private String flavorName;
-    /* 服务器所使用的硬件信息 */
+    /* 规格限速 */
     @TableField(typeHandler = JacksonTypeHandler.class)
     private Object qos;
+    /* 标签 */
+    private FlavorTag tag;
     /** 规格状态 */
     private BaseState state;
 

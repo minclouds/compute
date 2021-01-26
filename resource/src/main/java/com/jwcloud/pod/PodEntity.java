@@ -23,8 +23,6 @@ public class PodEntity extends BaseEntity {
     private String podUuid;
     /** 名称 */
     private String podName;
-    /** 标签 */
-    private String tag;
     /** 超分 */
     private float overCommit;
     /** 描述 */
@@ -35,6 +33,8 @@ public class PodEntity extends BaseEntity {
     private int hostMax;
     /** 已添加主机数量 */
     private int hostCount;
+    /** 标签 */
+    private String groupId;
     /** 集群Id */
     private int clusterId;
     @TableField(exist = false)
@@ -43,7 +43,7 @@ public class PodEntity extends BaseEntity {
     public PodEntity(PodDto dto, int clusterId) {
         this.podUuid = dto.getUuid();
         this.podName = dto.getName();
-        this.tag = dto.getTag().getTag();
+        this.groupId = dto.getGroupId();
         this.overCommit = dto.getOverCommit();
         this.description = dto.getDescription();
         this.state = dto.getState();

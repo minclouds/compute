@@ -84,14 +84,4 @@ public class PodService implements BaseService<PodEntity, PodDto> {
 
         return entities;
     }
-
-    /**
-     * 根据tag查询匹配的集群列表
-     */
-    public List<PodEntity> listByTag(String tag) {
-        List<PodEntity> entities = mapper.selectList(new LambdaQueryWrapper<PodEntity>()
-                .eq(PodEntity::getTag, tag).ne(PodEntity::getState, BaseState.deleted));
-
-        return entities;
-    }
 }

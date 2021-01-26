@@ -11,5 +11,5 @@ public class HostAllocateDto {
     /* 主机黑名单 */
     private List<String> blackHosts;
     /* 规格 */
-    private String flavorId;
+    private List<String> flavorIds;
 }

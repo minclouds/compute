@@ -17,6 +17,8 @@ public class FlavorDto extends BaseDto {
     private String uuid;
     @ApiModelProperty(value = "名称", example = "一代通用规格")
     private String name;
+    @ApiModelProperty(value = "标签", example = "主机或磁盘规格标签")
+    private FlavorTag tag;
     @ApiModelProperty(value = "主机限速")
     private EcsQos ecsQos;
     @ApiModelProperty(value = "磁盘限速")

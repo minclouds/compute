@@ -93,17 +93,6 @@ public class HostService implements BaseService<HostEntity, HostDto> {
      * 预占主机资源
      */
     public String allocate(HostAllocateDto dto) {
-        FlavorEntity flavor = flavorService.getById(dto.getFlavorId());
-        List<PodEntity> pods = podService.listByTag(flavor.getFlavorName());
-        pods.forEach(pod -> {
-            List<HostEntity> hosts = list(pod.getId());
-            for (HostEntity host : hosts) {
-                if (!host.getState().equals(HostState.available)) {
-                    continue;
-                }
-                
-            }
-        });
 
 
         return null;

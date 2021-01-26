@@ -15,14 +15,14 @@ public class PodDto extends BaseDto {
     private String uuid;
     @ApiModelProperty(value = "名称", example = "通用ECS交付区")
     private String Name;
-    @ApiModelProperty(value = "能力标签", example = "EcsG1Com")
-    private PodTag tag;
     @ApiModelProperty(value = "CPU超分", example = "4")
     private float overCommit;
     @ApiModelProperty(value = "描述", example = "北京牧野通用-计算-内存混合CVK调度区")
     private String description;
     @ApiModelProperty(value = "状态", example = "available")
     private BaseState state;
+    @ApiModelProperty(value = "标签组", example = "emc-com")
+    private String groupId;
     @ApiModelProperty(value = "集群", example = "HB2-beijing-a")
     private String clusterId;
 }
