@@ -26,7 +26,7 @@ public class HostEntity extends BaseEntity {
     /** 内存容量 */
     private int memory;
     /** 虚拟化类型 */
-    private String type;
+    private HostType type;
     /** 管理地址 */
     private String manageIp;
     /** agent上服务端口 */

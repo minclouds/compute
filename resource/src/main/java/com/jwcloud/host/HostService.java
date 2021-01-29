@@ -7,8 +7,11 @@ import com.jwcloud.pod.PodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class HostService implements BaseService<HostEntity, HostDto> {
@@ -34,12 +37,22 @@ public class HostService implements BaseService<HostEntity, HostDto> {
      */
     @Override
     public HostEntity delete(String id) {
-        return null;
+        HostEntity entity = getById(id);
+        entity.setState(HostState.deleted);
+        entity.setUpdatedAt(new Date());
+        mapper.updateById(entity);
+
+        return entity;
     }
 
     @Override
     public HostEntity update(String id, HostDto dto) {
-        return null;
+        HostEntity entity = getById(id);
+        entity.setType(dto.getType());
+        entity.setUpdatedAt(new Date());
+        mapper.updateById(entity);
+
+        return entity;
     }
 
     /**
@@ -48,8 +61,9 @@ public class HostService implements BaseService<HostEntity, HostDto> {
     @Override
     public HostEntity getById(String id) {
 
-        return mapper.selectOne(new LambdaQueryWrapper<HostEntity>()
-                .eq(HostEntity::getHostUuid, id).ne(HostEntity::getState, HostState.deleted));
+        return Optional.ofNullable(mapper.selectOne(new LambdaQueryWrapper<HostEntity>()
+                .eq(HostEntity::getHostUuid, id).ne(HostEntity::getState, HostState.deleted))
+        ).orElseThrow(() -> new HostException(HostMessage.NotFound, id));
     }
 
     /**

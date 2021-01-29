@@ -42,17 +42,8 @@ public class BaseController<S extends BaseService, E extends BaseEntity, D exten
         return RestResult.success(entity);
     }
 
-    @ApiOperation(value = "获取预配置信息")
-    @GetMapping("/getById")
-    @SuppressWarnings("unchecked")
-    public RestResult<E> getById(@RequestParam String id) {
-        E entity = (E) service.getById(id);
-
-        return RestResult.success(entity);
-    }
-
     @ApiOperation(value = "获取预配置信息详情")
-    @GetMapping("/detail")
+    @GetMapping("/describe")
     @SuppressWarnings("unchecked")
     public RestResult<E> detail(String id) {
         E entity = (E) service.detail(id);
