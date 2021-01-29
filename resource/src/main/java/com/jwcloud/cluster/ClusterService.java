@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class ClusterService implements BaseService<ClusterEntity, ClusterDto> {
@@ -30,7 +31,9 @@ public class ClusterService implements BaseService<ClusterEntity, ClusterDto> {
 
     @Override
     public ClusterEntity delete(String id) {
-        ClusterEntity entity = getById(id);
+        ClusterEntity entity = detail(id);
+        if (entity.getPods() != null)
+            throw new ClusterException(ClusterMessage.NotAllowed, id);
         entity.setState(BaseState.deleted);
         entity.setUpdatedAt(new Date());
         mapper.updateById(entity);
@@ -52,8 +55,9 @@ public class ClusterService implements BaseService<ClusterEntity, ClusterDto> {
     @Override
     public ClusterEntity getById(String id) {
 
-        return mapper.selectOne(new LambdaQueryWrapper<ClusterEntity>()
-                .eq(ClusterEntity::getClusterUuid, id).ne(ClusterEntity::getState, BaseState.deleted));
+        return Optional.ofNullable(mapper.selectOne(new LambdaQueryWrapper<ClusterEntity>()
+                .eq(ClusterEntity::getClusterUuid, id).ne(ClusterEntity::getState, BaseState.deleted))
+        ).orElseThrow(() -> new ClusterException(ClusterMessage.NotFound, id));
     }
 
     @Override

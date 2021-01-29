@@ -1,9 +1,6 @@
 package com.jwcloud.controller.resource;
 
 import com.jwcloud.base.BaseController;
-import com.jwcloud.flavor.FlavorDto;
-import com.jwcloud.flavor.FlavorEntity;
-import com.jwcloud.flavor.FlavorService;
 import com.jwcloud.goup.GroupDto;
 import com.jwcloud.goup.GroupEntity;
 import com.jwcloud.goup.GroupService;

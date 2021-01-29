@@ -13,13 +13,19 @@ public class RestResult<T> implements RestMessage {
     /** 响应详细消息 */
     private T data;
 
+    /**
+     * 获取正确的结果并返回
+     */
     public static <T> RestResult<T> success(T data) {
 
         return new RestResult<T>().setStatus(RestMessage.SUCCEED).setData(data);
     }
 
-    public static <T> RestResult<T> error(String message, T data) {
+    /**
+     * 根据错误码返回不同的错误信息
+     */
+    public static RestResult error(String status, String message) {
 
-        return new RestResult<T>().setStatus(RestMessage.FAILED).setMessage(message);
+        return new RestResult().setStatus(status).setMessage(message);
     }
 }

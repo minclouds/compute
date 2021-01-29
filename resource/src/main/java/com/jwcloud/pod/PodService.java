@@ -33,7 +33,9 @@ public class PodService implements BaseService<PodEntity, PodDto> {
 
     @Override
     public PodEntity delete(String id) {
-        PodEntity entity = getById(id);
+        PodEntity entity = detail(id);
+        if (entity.getHosts() != null)
+            throw new PodException(PodMessage.NotAllowed, id);
         entity.setState(BaseState.deleted);
         entity.setUpdatedAt(new Date());
         mapper.updateById(entity);
@@ -83,5 +85,14 @@ public class PodService implements BaseService<PodEntity, PodDto> {
         });
 
         return entities;
+    }
+
+    /**
+     * 查询相同分组标签POD列表
+     */
+    public List<PodEntity> listByGroupId(int groupId) {
+
+        return mapper.selectList(new LambdaQueryWrapper<PodEntity>()
+                .eq(PodEntity::getGroupId, groupId).ne(PodEntity::getState, BaseState.deleted));
     }
 }

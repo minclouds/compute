@@ -1,8 +1,5 @@
 package com.jwcloud.flavor;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * 规格标签
  *

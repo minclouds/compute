@@ -15,7 +15,7 @@ public class BaseController<S extends BaseService, E extends BaseEntity, D exten
     @Autowired
     private S service;
 
-    @ApiOperation(value = "集群创建时需要纳管或录入的预配置信息")
+    @ApiOperation(value = "需要纳管或录入的预配置信息")
     @PostMapping("/add")
     @SuppressWarnings("unchecked")
     public RestResult<E> insert(@RequestBody D dto) {
