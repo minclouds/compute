@@ -1,4 +1,4 @@
-package com.jwcloud.constant;
+package com.jwcloud.controller.contant;
 
 /**
  * 弹性云服务器操作

@@ -86,12 +86,4 @@ public class HostService implements BaseService<HostEntity, HostDto> {
         return mapper.selectCount(new LambdaQueryWrapper<HostEntity>()
                 .eq(HostEntity::getPodId, podId).ne(HostEntity::getState, HostState.deleted));
     }
-
-    /**
-     * 预占主机资源
-     */
-    public String allocate(HostAllocateDto dto) {
-
-        return null;
-    }
 }

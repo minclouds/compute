@@ -1,11 +1,13 @@
-package com.jwcloud.controller.delivery;
+package com.jwcloud.controller.instance;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(tags = "实例管理-交付")
 @RestController
 @RequestMapping("/v1.0/delivery")
 public class DeliveryController {

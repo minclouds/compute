@@ -8,7 +8,7 @@ import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(tags = "基础配置-交付")
+@Api(tags = "基础配置-区域")
 @RestController
 @RequestMapping("/v1.0/pod")
 public class PodController extends BaseController<PodService, PodEntity, PodDto> {

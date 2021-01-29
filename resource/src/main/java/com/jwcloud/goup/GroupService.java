@@ -18,6 +18,8 @@ public class GroupService implements BaseService<GroupEntity, GroupDto> {
     @Override
     public GroupEntity insert(GroupDto dto) {
         GroupEntity entity = new GroupEntity(dto);
+        entity.setCreatedAt(new Date());
+        entity.setUpdatedAt(new Date());
         mapper.insert(entity);
 
         return entity;

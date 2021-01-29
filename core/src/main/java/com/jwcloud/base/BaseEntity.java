@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 public class BaseEntity {
     @JsonIgnore
-    private int Id;
+    private int id;
     /* 入库时间 */
     private Date createdAt;
     /* 最后一次更新时间 */

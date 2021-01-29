@@ -34,7 +34,7 @@ public class PodEntity extends BaseEntity {
     /** 已添加主机数量 */
     private int hostCount;
     /** 标签 */
-    private String groupId;
+    private int groupId;
     /** 集群Id */
     private int clusterId;
     @TableField(exist = false)

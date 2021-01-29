@@ -63,7 +63,7 @@ public class BaseController<S extends BaseService, E extends BaseEntity, D exten
     @ApiOperation(value = "获取预配置信息列表")
     @GetMapping("/list")
     @SuppressWarnings("unchecked")
-    public RestResult<List<E>> list(@RequestParam Map<String, Object> params) {
+    public RestResult<List<E>> list(@RequestParam(required = false) Map<String, Object> params) {
         Map<String, Object> columnMap = new HashMap<>();
         params.forEach((k,v) -> columnMap.put(StringUtils.camelToUnderline(k), v));
         List<E> entities = service.list(columnMap);

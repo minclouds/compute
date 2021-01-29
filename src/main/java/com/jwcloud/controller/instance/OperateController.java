@@ -1,14 +1,16 @@
-package com.jwcloud.controller.delivery;
+package com.jwcloud.controller.instance;
 
-import com.jwcloud.constant.BmsAction;
-import com.jwcloud.constant.EbsAction;
-import com.jwcloud.constant.EcsAction;
+import com.jwcloud.controller.contant.BmsAction;
+import com.jwcloud.controller.contant.EbsAction;
+import com.jwcloud.controller.contant.EcsAction;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(tags = "实例管理-操作")
 @RestController
 @RequestMapping("/v1.0")
 public class OperateController {
@@ -23,8 +25,8 @@ public class OperateController {
     public void operateBms(@PathVariable BmsAction action) {
     }
 
-    @ApiOperation(value = "弹性云硬盘操作", notes = "弹性云硬盘属性、限速变更。")
-    @PostMapping("/compute/ebs/{action}")
+    @ApiOperation(value = "弹性云硬盘操作", notes = "弹性云硬盘属性、限速、容量变更。")
+    @PostMapping("/storage/ebs/{action}")
     public void operateEbs(@PathVariable EbsAction action) {
     }
 }

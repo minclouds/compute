@@ -21,8 +21,8 @@ public class PodDto extends BaseDto {
     private String description;
     @ApiModelProperty(value = "状态", example = "available")
     private BaseState state;
-    @ApiModelProperty(value = "标签组", example = "emc-com")
-    private String groupId;
+    @ApiModelProperty(value = "标签组", example = "1")
+    private int groupId;
     @ApiModelProperty(value = "集群", example = "HB2-beijing-a")
     private String clusterId;
 }

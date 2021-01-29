@@ -1,6 +1,5 @@
 package com.jwcloud.flavor.qos;
 
-import com.jwcloud.host.HostDeviceType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -25,7 +24,7 @@ public class EcsQos {
     @Data
     public static class DeviceQos {
         @ApiModelProperty(value = "类型", example = "gpu")
-        private HostDeviceType type;
+        private String type;
         @ApiModelProperty(value = "型号", example = "T4")
         private String model;
         @ApiModelProperty(value = "容量或个数", example = "2")
